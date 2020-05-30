@@ -6,9 +6,13 @@ a trouve comment on faisait sans spark et pour les classe mutable, on pourrai fa
  */
 object parser {
 
-  val airports = Source.fromFile("airports.csv").getLines.map(_.split(",").toList)
-  val countries = Source.fromFile("countries.csv").getLines.map(_.split(",").toList)
-  val runways = Source.fromFile("runways.csv").getLines.map(_.split(",").toList)
+  val filename_airport = "airports.csv"
+  val filename_country = "countries.csv"
+  val filename_runaway = "runways.csv"
+  
+  val airports = Source.fromFile(filename_airport).getLines.map(_.split(",").toList)
+  val countries = Source.fromFile(filename_country).getLines.map(_.split(",").toList)
+  val runways = Source.fromFile(filename_runaway).getLines.map(_.split(",").toList)
 
   val id_airport = airports.map(x => List(x(1)))
   val name_airport = airports.map(x => List(x(4)))// si j'ai bien comrpis, je recupere la 4eme colonnes de airports
