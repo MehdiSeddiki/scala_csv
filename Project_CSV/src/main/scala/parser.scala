@@ -4,7 +4,7 @@ import scala.io.Source
 a trouve comment on faisait sans spark et pour les classe mutable, on pourrai faire correspondre un attribut(List[le type associe])
 à une colonne de notre fichier csv
  */
-object parser {
+class parser {
 
   val filename_airport = "airports.csv"
   val filename_country = "countries.csv"
@@ -21,19 +21,13 @@ object parser {
   val code_country = countries.map(x => List(x(2)))
   airports.map(x => List(x(1), x(2), x(3), x(4), x(5)))
 
+  def printperso(l: List[Any]) = println(l)
+  def aff(l: List[Any]) = println(airports.map(x => List(x(1), x(2), x(3), x(4), x(5)))
+  )
 
-  //peut etre un truc comme ca en combinant nos deux trucs.
-  def parserfile(line: String): Option[Any] = {
-    line.split(",").toList match {
-      case List("nos datas") => Some(List("nos data"))
-      case _ => None
-    }
-  }
-
-  def readData(fileName:String): List[Any] = {
-    val line = Source.fromFile(fileName).getLines.toList
-    val data = parserfile(line) // probleme de type ici car line est de type list et non de type string
-  }
+  //1 objet par fichiers csv
+  //une classe storing dans laquelle on instancie les les objets de la classe parser
+  //
 }
 
 
