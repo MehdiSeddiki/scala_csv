@@ -1,3 +1,4 @@
+/*
 package csv_main
 
 object main {
@@ -18,14 +19,15 @@ object main {
               }
           }
           case "R" => {
-            println("1. Country with the Highest number of airports & Lowest number of airports")
+            println("1. Country with the Highest number of airports & Lowest number o
+ airports")
             println("2. Type of runways per country")
             println("3. Top 10 common runway latitude")
             println("4. Step Back (B)")
             Iterator.continually(io.StdIn.readLine)
               .foreach {
                 case "1" => {
-                  println("you choose Highest nb")
+                  println("you chose Highest nb")
                   main(args)
                 }
                 case "2" => {
@@ -44,5 +46,5 @@ object main {
           case "E" => System.exit(0)
           case _ => println("Bad choice try again !")
         }
-  }
-}
+  }*/
+
