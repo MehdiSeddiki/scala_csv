@@ -1,5 +1,5 @@
 import scala.io.Source
-
+/*
 class x {
 
 
@@ -17,4 +17,4 @@ object q {
     obj.affiche(airports.toList)
 
   }
-}
+}*/
