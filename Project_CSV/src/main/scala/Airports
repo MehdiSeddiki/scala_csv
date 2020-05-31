@@ -1,0 +1,29 @@
+import scala.io.Source
+
+class Airport{
+
+  def print_data(l: List[Any]) = println(l)
+
+}
+
+object airports{
+  val filename_airport = "resources/airports.csv"
+  val airports = Source.fromFile(filename_airport).getLines.map(_.split(",").toList)
+  val id = airports.map(x => List(x(1))).toList
+  val ident = airports.map(x => List(x(2))).toList
+  val type_ = airports.map(x => List(x(3))).toList
+  val name = airports.map(x => List(x(4))).toList
+  val latitude = airports.map(x => List(x(5))).toList
+  val longitude = airports.map(x => List(x(6))).toList
+  val elevation = airports.map(x => List(x(7))).toList
+  val continent = airports.map(x => List(x(8))).toList
+  val iso_country = airports.map(x => List(x(9))).toList
+  val iso_region = airports.map(x => List(x(10))).toList
+  val municipality = airports.map(x => List(x(11))).toList
+  val schedule_service = airports.map(x => List(x(12))).toList
+  val gps_code = airports.map(x => List(x(13))).toList
+  val iata_code = airports.map(x => List(x(14))).toList
+  val homelink = airports.map(x => List(x(15))).toList
+  val wikipedia_link = airports.map(x => List(x(16))).toList
+  val keyword = airports.map(x => List(x(17))).toList
+}
