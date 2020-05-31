@@ -1,5 +1,5 @@
-import scala.io
 
+/*
 class Query{
   val c = new Country
 
@@ -30,4 +30,4 @@ class Query{
 
   }
 
-}
+}*/

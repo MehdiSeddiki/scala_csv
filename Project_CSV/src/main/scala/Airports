@@ -1,9 +1,11 @@
+/*
+
 import scala.io.Source
 
 class Airport{
 
   def print_data(l: List[Any]) = println(l)
-
+A
 }
 
 object airports{
@@ -27,3 +29,4 @@ object airports{
   val wikipedia_link = airports.map(x => List(x(16))).toList
   val keyword = airports.map(x => List(x(17))).toList
 }
+*/

@@ -1,33 +1,4 @@
-import scala.io.Source
+/*
 
-class Runways{
-
-  def print_data(l: List[Any]) = println(l)
-
-}
-object runways{
-  val filename_runways = "resources/runways.csv"
-  val runways = Source.fromFile(filename_runways).getLines.map(_.split(",").toList)
-  //val stock = airports.map(x => List(x(1), x(2), x(3), x(4), x(5)))
-  val id = runways.map(x => List(x(1))).toList
-  val airport_ref = runways.map(x => List(x(2))).toList
-  val airport_ident = runways.map(x => List(x(3))).toList
-  val length= runways.map(x => List(x(4))).toList
-  val width = runways.map(x => List(x(5))).toList
-  val surface = runways.map(x => List(x(6))).toList
-  val lited = runways.map(x => List(x(7))).toList
-  val closed = runways.map(x => List(x(8))).toList
-  val le_ident = runways.map(x => List(x(9))).toList
-  val le_latitute = runways.map(x => List(x(10))).toList
-  val le_longitude = runways.map(x => List(x(11))).toList
-  val le_elevation = runways.map(x => List(x(12))).toList
-  val le_heading = runways.map(x => List(x(13))).toList
-  val le_displaced_treshold = runways.map(x => List(x(14))).toList
-  val he_ident = runways.map(x => List(x(15))).toList
-  val he_latitude = runways.map(x => List(x(16))).toList
-  val he_longitude = runways.map(x => List(x(17))).toList
-  val he_elevation= runways.map(x => List(x(18))).toList
-  val he_heading = runways.map(x => List(x(19))).toList
-  val he_dispalced_treshold = runways.map(x => List(x(20))).toList
-}
-
+Runways
+ */
