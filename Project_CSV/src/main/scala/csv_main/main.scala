@@ -41,7 +41,7 @@ object main {
                 main(args)
               }
               case "2" => {
-                println(" you choose type of runways")
+                r.runways_per_country()
                 main(args)
               }
               case "3" => {

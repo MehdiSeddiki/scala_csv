@@ -43,19 +43,19 @@ class Query {
 
       if (is_name_country(input)) {
         countries.foreach(i => {
-          if (i.get.name.toString.contains(input)) {
-            val code_c = i.get.code
-            val run = runways.filter(e => !e.equals(None))
-            val f_airports = airports.filter(e => !e.equals(None))
-            f_airports.foreach(i => {
-              run.foreach(j => {
-                if (i.get.iso_country.contains(code_c)) {
-                  print(i.get.name + " , ")
-                  i.get.id.equals(j.get.airport_ref)
-                  println(j.get.id)
-                }
+          try {
+            if (i.get.name.toString.contains(input)) {
+              val code_c = i.get.code
+              val run = runways.filter(e => !e.equals(None))
+              val f_airports = airports.filter(e => !e.equals(None))
+              val res = f_airports.filter(_.get.iso_country.contains(code_c))
+              res.foreach(i => {
+                val res2 = run.filter(_.get.airport_ident.equals(i.get.ident)).map(i => i.get.id)
+                println(i.get.name + " , " + res2)
               })
-            })
+            }
+          }catch{
+            case e: Exception => None
           }
         })
       }
@@ -63,15 +63,11 @@ class Query {
         try {
         val run = runways.filter(e => !e.equals(None))
         val f_airports = airports.filter(e => !e.equals(None))
-        f_airports.foreach(i => {
-          run.foreach(j => {
-            if (i.get.iso_country.contains(input)) {
-              print(i.get.name + " , ")
-              i.get.id.equals(j.get.airport_ref)
-              println(j.get.id)
-            }
+          val res = f_airports.filter(_.get.iso_country.contains(input))
+          res.foreach(i => {
+            val res2 = run.filter(_.get.airport_ident.equals(i.get.ident)).map(i => i.get.id)
+            println(i.get.name + " , " + res2)
           })
-        })
         }catch{
           case e: Exception => None
         }
