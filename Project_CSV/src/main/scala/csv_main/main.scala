@@ -1,6 +1,7 @@
 import scala.io.Source
 package csv_main{}
 package classes{}
+package Query{}
 
 object main {
   def main(args: Array[String]): Unit = {
@@ -15,26 +16,28 @@ object main {
           Iterator.continually(io.StdIn.readLine)
             .foreach {
               case "1" => {
-                val c = new classes.C
-                val filename = c.filename_countries
-                val countries = c.countries
-                countries.foreach(println)
+                val q = new Query.Query
+                val in = q.read_input()
+                if (q.is_code_country(in))
+                  q.display_airport_runways(in)
+                else
+                  println("false")
                 main(args)
               }
-
               case "2" => main(args)
             }
         }
-
         case "R" => {
           println("1. Country with the Highest number of airports & Lowest number o airports")
           println("2. Type of runways per country")
           println("3. Top 10 common runway latitude")
           println("4. Step Back (B)")
+          val r = new Reports.Reports
+
           Iterator.continually(io.StdIn.readLine)
             .foreach {
               case "1" => {
-                println("you chose Highest nb")
+                r.highest_countries_airport()
                 main(args)
               }
               case "2" => {
@@ -42,7 +45,7 @@ object main {
                 main(args)
               }
               case "3" => {
-                println("you choose 10 common runway latitude")
+                r.most_commom_runway_latitude()
                 main(args)
               }
               case "B" => main(args)

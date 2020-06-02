@@ -26,9 +26,8 @@ class C {
     }
 
     val filename_countries = "resources/countries.csv"
-    val countries = Source.fromFile(filename_countries).getLines.map(makeCountry)
-    countries.foreach(println)
-
-
+    val countries = Source.fromFile(filename_countries).getLines.map(makeCountry).toList
+    val l = countries.tail
+    //println(l)
 
 }
