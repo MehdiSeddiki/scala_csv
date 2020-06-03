@@ -3,19 +3,16 @@ package Reports
 import scala.collection.immutable.ListMap
 
 class Reports {
-  // For Country
+  // Country
   val c = new classes.C
-  val filename_country = c.filename_countries
   val countries = c.l
 
-  // For Airports
+  //  Airports
   val a = new classes.A
-  val filename_airport = a.filename_airport
   val airports = a.l
 
-  //For Runways
+  // Runways
   val r = new classes.R
-  val file = r.filename_runways
   val runways = r.runways
 
 
@@ -24,6 +21,7 @@ class Reports {
     val f_countries = runways.filter(e => !e.equals(None))
     val res = f_countries.sortBy(_.get.le_ident).groupBy(_.get.le_ident).mapValues(_.size)
     val c = ListMap(res.toSeq.sortWith(_._2 > _._2):_*).take(10)
+    println("Most common runway altitude are :")
     c.foreach(i =>  println(i))
   }
 
@@ -48,7 +46,7 @@ class Reports {
     val f_airports = airports.filter(e => !e.equals(None))
     val f_countries = countries.filter(e => !e.equals(None))
 
-    println("FIRST 10 COUNTRIES")
+    println("Countries with the Highest number of airports :")
     println("")
     //TOP 10
     val res = f_airports.groupBy(_.get.iso_country).mapValues(_.size).toList
@@ -62,8 +60,8 @@ class Reports {
         })
       })
 
-    println("\n")
-    println("LAST 10 COUNTRIES")
+    println("\n--------------------------------------------------")
+    println("Countries with the Lowest number of airports :\n")
 
     //TOP -10
     val f = f_airports.groupBy(_.get.iso_country).mapValues(_.size).toList
@@ -78,5 +76,4 @@ class Reports {
     })
     println("")
   }
-
 }
