@@ -33,20 +33,14 @@ class Reports {
     val f_airports = airports.filter(e => !e.equals(None))
     f_countries.foreach(i => {
       val code = i.get.code
-
       val res = f_airports.filter(_.get.iso_country.contains(code))
-
       res.foreach(j => {
         val res2 = f_runways.filter(_.get.airport_ident.equals(j.get.ident)).map(i => i.get.surface)
         val iso_country = j.get.iso_country
-        //val result = res2.groupBy(e => e.get.surface).mapValues(_.size).toList.sortBy(_._2)
        if (iso_country == code && !res2.equals(Nil))
           println(i.get.name + " , ", res2)
-        //println(result)
       })
     })
-
-
   }
 
 
