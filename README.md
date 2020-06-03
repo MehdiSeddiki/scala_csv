@@ -3,7 +3,7 @@
 Write a web application in Scala that will ask the user for two actions : Query or Reports.
 
 1.  [X] Query Option will ask the user for the country name or code and display the airports & runways at each airport.
-    [X] The input can be country code or country name.
+    - [X] The input can be country code or country name.
 
 2. [X] Choosing Reports will display the following (possibly through a menu):
 
