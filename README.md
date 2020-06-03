@@ -11,7 +11,7 @@ Write a web application in Scala that will ask the user for two actions : Query 
     - [X] Type of runways (as indicated in "surface" column) per country
     - [X] The top 10 most common runway latitude (indicated in "le_ident" column)
 ​
-If you get the job done (9pt) with a clean code (4pt), correct test coverage (2pt) you'll have up to 15.
+- If you get the job done (9pt) with a clean code (4pt), correct test coverage (2pt) you'll have up to 15.
 
 ### Optional Part
    - [X]  Use coursier (0.5pt)
