@@ -7,9 +7,9 @@ Write a web application in Scala that will ask the user for two actions : Query 
 
 2. [X] Choosing Reports will display the following (possibly through a menu):
 
-    [X] 10 countries with highest number of airports (with count) and countries  with lowest number of airports.
-    [X] Type of runways (as indicated in "surface" column) per country
-    [X] The top 10 most common runway latitude (indicated in "le_ident" column)
+    - [X] 10 countries with highest number of airports (with count) and countries  with lowest number of airports.
+    - [X] Type of runways (as indicated in "surface" column) per country
+    - [X] The top 10 most common runway latitude (indicated in "le_ident" column)
 ​
 If you get the job done (9pt) with a clean code (4pt), correct test coverage (2pt) you'll have up to 15.
 
